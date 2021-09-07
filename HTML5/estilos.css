@@ -1,0 +1,22 @@
+header {
+    background: palegreen;
+    text-align: center;
+    padding: 10px;
+}
+
+footer {
+    background: lightblue;
+    color: blueviolet
+}
+
+ul li {
+    color: red;
+    display: inline-block;
+    background: white;
+    width: 120px;
+    border-radius: 5px;
+}
+
+ul li:hover {
+    background: plum;
+}
