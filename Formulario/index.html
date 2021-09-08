@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <h2>Formulario</h2>
+
+    <form action="#">
+      <h3>Texto</h3>
+      <label for="nombre">Nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        placeholder="Ingrese un nombre"
+        size="50"
+        value=""
+        name="nombre"
+        autofocus
+        maxlength="10"
+      />
+
+      <h3>radio buttons</h3>
+      <fieldset>
+        <legend>Colores</legend>
+        <input type="radio" name="color" value="azul" id="azul" />
+        <label for="azul">Azul</label>
+        <input type="radio" name="color" value="rojo" checked /> Rojo
+        <input type="radio" name="color" value="amarilla" /> Amarillo
+        <input type="radio" name="color" value="negro" /> Negro
+      </fieldset>
+
+      <h3>select</h3>
+      <label for="frutas">Frutas</label>
+      <select name="frutas" id="frutas">
+        <optgroup label="Favoritas">
+          <option value="1">Fresa</option>
+          <option value="2" selected>Naranja</option>
+        </optgroup>
+        <optgroup label="Otras">
+          <option value="3">Uva</option>
+        </optgroup>
+      </select>
+
+      <h3>textarea</h3>
+      <textarea
+        name="mensaje"
+        id="mensaje"
+        cols="50"
+        rows="12"
+        placeholder="Escribe aqui...."
+      ></textarea>
+
+      <h3>Datalist</h3>
+
+      <label>Colores</label>
+      <input list="colores">
+      <datalist id="colores">
+        <option value="azul"></option>
+        <option value="verde"></option>
+        <option value="rojo"></option>
+        <option value="cafe"></option>
+      </datalist>
+
+      <h3>password</h3>
+      <input type="password">
+
+      <h3>checkbox</h3>
+      <input type="checkbox" name="hogar" value="valor1" checked> Hogar
+      <input type="checkbox" name="escuela" value="valor2"> Escuela
+      <input type="checkbox" name="oficina" value="valor3"> Oficina
+
+      <h3>color</h3>
+      <input type="color">
+
+      <h3>Fechas</h3>
+      <input type="date" value="2021-09-08" min="2021-09-08" max="2021-09-10">
+      <input type="week">
+      <input type="datetime-local">
+      <input type="month">
+      <input type="time">
+
+      <h3>email</h3>
+      <input type="email">
+
+      <h3>url</h3>
+      <input type="url">
+
+      <br /><br />
+      <input type="submit" value="Guardar" />
+      <input type="reset">
+    </form>
+  </body>
+</html>
