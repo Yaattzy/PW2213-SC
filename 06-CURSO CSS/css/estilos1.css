@@ -1,0 +1,81 @@
+/*******Selectores básicos*******/
+h1 {
+    color: red;
+    background: bisque;
+}
+
+p {
+    color:violet;
+}
+
+#titulo {
+    color: teal;
+}
+
+.parrafo {
+    color: white;
+}
+
+.bg-rojo {
+    background: red;
+}
+
+/*Selectores de atributos*/
+[href] {
+    color: green;
+}
+
+[href="#"] {
+    color: red;
+}
+/*Selecciona los elementos que tienen ese atributo y 
+ese valor al menos una vez*/
+[class~="verde"]{
+    color: blue;
+}
+
+/*Selecciona los elementos que tienen ese atributo y 
+exactamente ese valor o comience por ese valor seguido de un guión*/
+[class|="verde"]{
+    color: purple;
+}
+
+/*Selecciona los elementos que tienen ese atributo y 
+empiecen por ese valor*/
+[class^="rojo"]{
+    color: orange;
+}
+
+/*Selecciona los elementos que tienen ese atributo y 
+terminen por ese valor*/
+[class$="rojo"]{
+    color: palevioletred;
+}
+
+/*Selecciona los elementos que tienen ese atributo y 
+contengan por ese valor*/
+[class*="rojo"]{
+    color: green;
+}
+
+/*********SELECTORES COMBINADORES************/
+/*Hermano adyacente*/
+h1 + h2 {
+    color: blue;
+}
+
+/*Hermano general*/
+h1 ~ h3 {
+    color: green;
+}
+
+/*selectores descendentes*/
+p span {
+    color: greenyellow;
+}
+
+/*Selector de hijo directo*/
+
+p > span {
+    color:orange;
+}
