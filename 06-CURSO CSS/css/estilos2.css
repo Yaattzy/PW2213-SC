@@ -1,0 +1,57 @@
+/*
+    Etiquetas -----> 1
+    Clases y psudoclases ---> 10
+    Ids --------> 100
+    Estilos en línea ----> 1000
+    !important ----> Gana a todo
+*/
+
+
+h1 {
+    background-color: aqua;
+}
+
+h1.titulo#titulo {
+    background-color: red;
+}
+
+#titulo {
+    background-color: tomato;
+}
+
+.titulo {
+    background-color: teal;
+}
+
+h1 {
+    /* color: white; */
+    background-color: green;
+    font-size: 20px;
+}
+
+h1 {
+    background-color: brown;
+} 
+
+p {
+    color: green;
+}
+
+a {
+    color: inherit;
+}
+
+ul {
+    color: red;
+}
+
+.li {
+    color: initial;
+}
+
+
+
+
+
+
+
