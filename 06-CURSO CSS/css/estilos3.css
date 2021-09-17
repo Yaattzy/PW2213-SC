@@ -1,0 +1,11 @@
+.bloque {
+  background: aqua;
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.linea {
+  background: blueviolet;
+  padding-left: 50px;
+}
