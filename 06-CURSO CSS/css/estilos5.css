@@ -1,0 +1,17 @@
+.contenedor1, .contenedor2 {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.contenedor1 {
+    background: lightblue;
+    position: relative;
+    /*top y left tienen prioridad*/
+    left: 50px;
+}
+
+.contenedor2 {
+    background: lightcoral;
+    position: relative;
+}

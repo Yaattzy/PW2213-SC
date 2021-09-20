@@ -1,0 +1,26 @@
+/*
+Display: Nos permite definir el comportamiento de las etiquetas.
+
+    inline: El elemento se comporte como elemento en línea
+
+    block: El elemento se comporte como elemento en bloque
+
+    inline-block: El elemento se comporte como elemento en línea,
+    pero permite modificar el ancho y alto.
+
+    none: Ocultar el elemento, pero este sigue renderizando.
+*/
+
+.linea {
+    background: aqua;
+}
+
+.bloque {
+    background: blueviolet;
+    display: block;
+}
+
+p {
+    display: inline-block;
+    width: 49%;
+}
