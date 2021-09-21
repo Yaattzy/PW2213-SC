@@ -15,3 +15,80 @@
     background: lightcoral;
     position: relative;
 }
+
+
+/*Absolute*/
+
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 5px solid black;
+    position: relative;
+}
+
+[class^="caja"] {
+    width: 40px;
+    height: 40px;
+    background: aquamarine;
+    border:2px solid black;
+    text-align: center;
+}
+
+.caja1 {
+    position: absolute;
+    top: 0;
+}
+
+.caja2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.caja3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.caja4 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.caja5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+/*Fixed*/
+
+body {
+    margin: 0 auto;
+    /* padding-top: 30px; */
+}
+
+.menu {
+    width: 100%;
+    background: goldenrod;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+
+    /* position: fixed;
+    top:0; */
+    position: sticky;
+    top: 0;
+}
+
+.carrusel {
+    height: 180px;
+    background: blue;
+    color: white;
+    text-align: center;
+}
