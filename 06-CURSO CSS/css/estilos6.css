@@ -1,0 +1,225 @@
+/*
+    Pseudoelementos
+
+    Se utilizan para dar estilo a partes específicas de un elemento.
+
+    ::first-letter - Elementos en bloque
+    ::first-line - Elementos en bloque
+    ::selection
+    ::before
+    ::after
+*/
+
+.titulo::first-letter {
+    color:red;
+    font-size: 42px;
+}
+
+.texto::first-line {
+    color: palevioletred;
+}
+
+.texto::selection {
+    background: peru;
+    color: white;
+}
+
+/*
+    En before y after, 
+    La propiedad de content es obligatoria.
+    Son elementos en línea por defecto.
+    Son hijos del elemento al que pertenecen.
+*/
+
+.dinero::before {
+    content: '$';
+    color: red;
+}
+
+.dinero::after {
+    content: ' MXN';
+    color: blue;
+}
+
+.ejemplo::before, .ejemplo::after {
+    content: '';
+    width: 50px;
+    height: 10px;
+    display: block;
+    background: red;
+}
+
+/*
+Pseudoclases
+
+Dinamicas
+
+    :link - link no visitado
+    :visited(links) - link visitado
+    :active (links) - al momento del click
+    :hover - Al poner mouse sobre el elemento
+    :focus - cuando el elemento tiene el foco
+*/
+
+.enlace:link {
+    color:red;
+}
+
+.enlace:visited {
+    color: green;
+}
+
+.enlace:active {
+    color:white;
+    background: black;
+}
+
+.boton {
+    background: violet;
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.boton:active {
+    transform: scale(.9);
+}
+
+.boton:hover {
+    border: 1px solid violet;
+    color: violet;
+    background: white;
+}
+
+.input:focus {
+    background: turquoise;
+}
+
+
+/*
+   --------------------------------
+   Pseudoclase
+   Estado
+
+   :enabled
+   :disabled
+   :checked
+   :required
+   :valid
+   :invalid
+   :in-range
+   :out-of-range
+
+*/
+
+.input, .label {
+    display: block;
+}
+
+.checkbox, .checkbox + label {
+    display: inline-block;
+}
+
+.input:enabled {
+    background: turquoise;
+}
+
+.input:required {
+    background: tomato;
+}
+
+.input:disabled {
+    background: red;
+}
+
+.input:checked + label{
+    color: green;
+    font-size: 20px;
+}
+
+
+/*
+    --------------------
+    Pseudoclase
+    Estructural
+
+    :root
+
+    :empty - Se aplica a elementos vacios
+
+    CHILD: 
+        :first-child
+        :last-child
+
+        :nth-child()
+        :nth-last-child()
+        :only-child
+
+        -valores: 
+            odd - impares
+            even- pares
+            numeros enteros
+            ecuaciones(3n+1, 4n, 2n+2)
+
+        -type:
+        :first-of-type
+        :last-of-type
+        :nth-of-type()
+        :nth-of-last-type()
+        :only-of-type
+
+    :not
+*/
+
+/* .parrafo {
+    background: greenyellow;
+    padding: 10px;
+}
+
+.parrafo:empty {
+    padding: 0;
+} */
+
+/* .parrafo:first-child {
+    background: greenyellow;
+} */
+
+/* .parrafo:last-child {
+    background: hotpink;
+} */
+
+/* .parrafo:nth-child(odd){
+    background: hotpink;
+}
+
+.parrafo:nth-child(even){
+    background: yellowgreen;
+} */
+
+/* .parrafo:nth-child(4){
+    background: turquoise;
+} */
+
+/* .parrafo:nth-child(2n + 1){
+    background: turquoise;
+} */
+
+/* .parrafo:nth-last-child(odd){
+    background: tomato;
+} */
+
+/* .parrafo:only-child{
+    background: tomato;
+} */
+
+/* .parrafo:nth-of-type(5) {
+    background: tomato;
+} */
+
+/* .parrafo:not(p){
+    background: tomato;
+} */
+
