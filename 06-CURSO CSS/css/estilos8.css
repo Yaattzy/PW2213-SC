@@ -1,0 +1,38 @@
+/*
+Degradados
+
+Existen de 2 tipos: lineales y radiales.
+
+2 colores: 0% 100%
+3 colores: 0% 50% 100%
+
+Son valores de background-image.
+
+    linear-grandient([direction], color1, color2)
+    background-image: linear-gradient(red, blue)
+
+        direcciones: to | top, right, bottom, left, top right, bottom left
+                    grados: 90deg....
+
+        inicios o paradas de color: usar medidas en px, em, %.
+        Si ambos colores comienzan donde mismo se tiene un corte solido
+
+    
+    radial-gradient([shape], color1, color2)
+    background-image: radial-gradient(red, blue)
+
+    shape: circle o ellipse - circle es la de defecto
+
+    origen: at | top, right, bottom, left ....
+
+*/
+
+.caja {
+    width: 200px;
+    height: 200px;
+    /* border: 3px solid black; */
+    /* background-image: linear-gradient(red, blue 15% 90%, orange); */
+    /* background-image: radial-gradient(ellipse 100px 50px at bottom, red 50%, blue 50%); */
+    background-image: linear-gradient(45deg, red 50%, blue 50%, green 75%, blue 75%);
+    background-size: 40px 40px;
+}
