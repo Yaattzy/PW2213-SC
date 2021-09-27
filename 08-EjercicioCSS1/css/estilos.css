@@ -1,0 +1,27 @@
+:root {
+    --blue: #daf2fa;
+    --pink: #98386b;
+    --orange: #fea400;
+    --dark-pink: #945476;
+}
+
+header {
+    background: var(--blue);
+}
+
+header nav {
+    background: var(--pink);
+    border-radius: 5px;
+}
+
+header nav ul li {
+    display: inline;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.logo {
+    position: absolute;
+    left: 120px;
+    top: 20px
+}
