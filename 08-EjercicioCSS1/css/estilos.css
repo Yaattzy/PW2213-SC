@@ -5,23 +5,54 @@
     --dark-pink: #945476;
 }
 
+body {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
 header {
     background: var(--blue);
+    position: relative;
 }
 
 header nav {
     background: var(--pink);
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header nav ul li {
     display: inline;
     color: #FFF;
     font-weight: bold;
+    margin-right: 25px;
+}
+
+input[type="search"], input[type="submit"] {
+    border-radius: 5px;
+    height: 30px;
+}
+
+input[type="submit"] {
+    background: var(--orange);
+    color: #FFF;
+    margin-right: 25px;
+    border: none;
 }
 
 .logo {
     position: absolute;
     left: 120px;
-    top: 20px
+    top: 10px;
+}
+
+/*SECCIONES*/
+
+.secc1 img {
+    width: 100%;
+    padding: 20px;
+    border: 5px solid #ccc;
+    box-sizing: border-box;
 }
