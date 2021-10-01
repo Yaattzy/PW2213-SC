@@ -1,6 +1,47 @@
 :root {
     --cafe: #e9d6b3;
-    --lila: #9a77cd;
+    --lila: #865dc1;
     --azul: #add8e6;
     --gris: #fafafa;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/**Header**/
+header {
+ display: flex;
+ justify-content: space-between;
+ padding: 0 15px;
+}
+
+header h1 {
+    margin: 0;
+    color: #FFF;
+     /* text-shadow: 1px 1px 0 var(--lila), -1px -1px 0 var(--lila);  */
+    -webkit-text-stroke: 1px var(--lila);
+}
+
+.logo-redes {
+    margin-top: 20px;
+}
+
+.logo-redes img {
+    margin-left: 7px;
+}
+
+/***MENU**/
+
+.barra {
+    background-image: linear-gradient(var(--lila) 10%, #baa6d5 15%, var(--lila) 50%);
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.menu ul li {
+    display: inline-block;
+    padding: 10px;
+    font-size: small;
 }
