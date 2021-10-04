@@ -45,3 +45,33 @@ header h1 {
     padding: 10px;
     font-size: small;
 }
+
+section, aside {
+    display: inline-block;
+    vertical-align: top;
+}
+
+section {
+    width: 60%;
+}
+
+aside {
+    width: 38%;
+}
+
+.art1 img {
+    width: 100%;
+}
+
+.publicidad-aside img{
+    width: 48%;
+}
+
+.publicidad-aside {
+ border: 1px solid #bbb;
+}
+
+.publicidad-anuncios {
+    padding: 10px;
+    border: 1px solid red;
+}
