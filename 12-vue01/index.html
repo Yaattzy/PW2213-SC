@@ -14,9 +14,9 @@
         <hr>
         {{nuevaFruta}} <br>
         <label class="form-label" for="fruta">Fruta</label>
-        <input v-model="nuevaFruta" type="text" class="form-control mb-3" id="fruta" placeholder="Ingrese una fruta">
+        <input v-model="nuevaFruta" @keyup.enter="agregarFruta" type="text" class="form-control mb-3" id="fruta" placeholder="Ingrese una fruta">
         <button @click="agregarFruta" class="btn btn-primary">Agregar</button>
-
+    
         <hr>
         <ul class="list-group">
             <li 
@@ -41,10 +41,13 @@
                 <button @click="fruta.cantidad++" class="btn btn-primary mx-2">+</button>
                 <button @click="fruta.cantidad--" class="btn btn-primary">-</button>
                 <span v-if="fruta.cantidad === 0" class="mx-2">No hay inventario</span>
-                <span v-else>Si hay inventario</span>
+                <span v-else class="mx-2">Si hay inventario</span>
             </li>
           </ul>
-
+          <hr>
+          <h3 class="m-4" :class="colorCantidad">
+              Mi cantidad total de frutas: {{ sumarFrutas }}
+         </h3>
 
 
     </div>
