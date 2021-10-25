@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav colors="#FF0000"/>
-    <router-view/>
+    <router-view class="m-4"/>
   </div>
 </template>
 

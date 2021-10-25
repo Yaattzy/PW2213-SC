@@ -1,15 +1,27 @@
 <template>
   <div>
       <h1>Mi título</h1>
-      <button @click="consumirApiAsync">Buscar</button>
-      <div>
-      </div>
+      <button class="btn btn-success mb-2" @click="consumirApiAsync">Buscar</button>
+      
+      <Card 
+        v-for="p in peliculas"
+        :key="p.id"
+        :id="p.id"
+        :titulo="p.title"
+        :descripcion="p.description"
+        :imagen="p.image"
+      />
   </div>
 </template>
 
 <script>
+import Card from '../components/Card.vue'
+
 export default {
     name: 'Objeto',
+    components: {
+        Card
+    },
     data() {
         return {
             peliculas: []
