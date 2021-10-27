@@ -1,7 +1,10 @@
 <template>
   <div>
-      <h1>Detalle</h1>
-      {{$route.params.id}}
+      <router-link to="/objeto">Regresar</router-link>
+      <h1>{{pelicula.title}}</h1>
+      <h3>{{pelicula.director}}</h3>
+      <img :src="pelicula.movie_banner" alt="" class="mb-3" width="500">
+      <p>{{pelicula.description}}</p>
   </div>
 </template>
 
@@ -23,6 +26,9 @@ export default {
                 console.log(error);
             }
         }
+    },
+    created() {
+        this.consumirPelicula();
     }
 }
 </script>
