@@ -14,6 +14,16 @@ const routes = [
     path: '/post/:id',
     name: 'DetallePost',
      component: () => import('../views/DetallePost.vue')
+  },
+  {
+    path: '/todos',
+    name: 'Todos',
+     component: () => import('../views/Todos.vue')
+  },
+  {
+    path: '/todos-completos',
+    name: 'TodosCompletos',
+     component: () => import('../views/TodosCompletos.vue')
   }
 ]
 
