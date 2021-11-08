@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
+  <div class="home"> 
     <h1>Mis Posts</h1>
-    <div v-for="p in posts" :key="p.id" class="alert alert-secondary" role="alert">
+    <div v-if="loading">Cargando...</div>
+    <div v-else v-for="p in posts" :key="p.id" class="alert alert-secondary" role="alert">
       <h6>{{p.title}}</h6>
       <router-link :to="`/post/${p.id}`">Ver más...</router-link>
     </div>
@@ -17,10 +18,12 @@ export default {
     ...mapActions(["getPosts"]),
   },
   computed: {
-    ...mapState(["posts"]),
+    ...mapState(["posts", "loading"]),
   },
   created() {
-    this.getPosts();
   },
+  mounted() {
+    this.getPosts();
+  }
 };
 </script>

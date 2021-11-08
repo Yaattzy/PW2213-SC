@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     posts: [],
     post: {},
-    todos: []
+    todos: [],
+    loading: false
   },
   mutations: {
     SET_POSTS(state, posts){
@@ -19,15 +20,20 @@ export default new Vuex.Store({
     },
     SET_TODOS(state, t) {
       state.todos = t;
+    },
+    SET_LOADING(state, payload) {
+      state.loading = payload;
     }
   },
   actions: {
     getPosts({commit}){
+      commit('SET_LOADING', true);
       axios.get('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
         commit('SET_POSTS', response.data);
       })
-      .catch(error => console.log(error));
+      .catch(error => console.log(error))
+      .finally(() => commit('SET_LOADING', false));
     },
     getPost({commit}, id){
       axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
