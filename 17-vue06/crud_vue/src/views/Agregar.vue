@@ -101,17 +101,20 @@
           placeholder="Ingrese las horas requeridas"
         />
       </div>
-      <input class="btn btn-success" type="submit" value="Guardar">
+      <input class="btn btn-success" type="submit" value="Guardar" :disabled="estadoBoton">
     </form>
   </div>
 </template>
 
 <script>
+import { nanoid } from 'nanoid'
+import {mapActions} from 'vuex'
 export default {
   name: "Agregar",
   data() {
     return {
       todo: {
+        id: "",
         nombre: "",
         tipo: [],
         prioridad: "",
@@ -120,10 +123,28 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['agregarTodo']),
     guardar() {
       console.log("Guardar todo", this.todo);
+
+      if(this.todo.nombre.trim() === ""){
+        console.log("Campo vacío");
+        // Escribe tu validación aquí
+        return;
+      }
+
+      this.todo.id = nanoid(4);
+      this.agregarTodo(this.todo);
+
+      this.$router.push({name: "Home"});
+     
     },
   },
+  computed: {
+      estadoBoton(){
+        return this.todo.nombre === "" ? true : false;
+      }
+  }
 };
 </script>
 

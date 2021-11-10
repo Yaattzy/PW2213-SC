@@ -6,19 +6,17 @@
 
     // Se mostraran todos los registros de todos
 
-    <div>{{todos}}</div>
+    <Tabla />
+
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
-
+import Tabla from '../components/Tabla.vue'
 export default {
   name: 'Home',
   components: {
-  },
-  computed: {
-    ...mapState(['todos'])
+    Tabla
   }
 }
 </script>
