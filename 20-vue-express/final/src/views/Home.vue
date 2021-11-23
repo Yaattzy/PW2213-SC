@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <Table :items="personas" :fields="campos" />
+    <h1>Personas</h1>
+     <b-button to="/agregar" variant="outline-primary">Agregar</b-button>
+    <Table :items="personas" :fields="campos" :busy="loading"/>
   </div>
 </template>
 
@@ -35,12 +37,12 @@ export default {
     };
   },
   computed: {
-    ...mapState(["personas"]),
+    ...mapState(["personas", "loading"]),
   },
   methods: {
     ...mapActions(["setPersonas"]),
   },
-  created() {
+  mounted() {
     this.setPersonas();
   },
 };
