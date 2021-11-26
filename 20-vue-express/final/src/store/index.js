@@ -26,6 +26,11 @@ export default new Vuex.Store({
       })
       .catch(error => console.log("error", error))
       .finally(() => commit('SET_LOADING', false));
+    },
+    crearPersona({commit}, {params, onComplete, onError}){
+      axios.post('http://localhost:3000/personas', params)
+      .then(onComplete)
+      .catch(onError);
     }
   },
   modules: {

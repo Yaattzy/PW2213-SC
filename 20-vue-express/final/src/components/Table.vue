@@ -7,6 +7,9 @@
           <strong>Cargando...</strong>
         </div>
       </template>
+      <template #cell(actions)="data">
+       slot
+      </template>
     </b-table>
   </div>
 </template>
@@ -21,9 +24,9 @@ export default {
       default: [],
     },
     busy: {
-        type: Boolean,
-        default: false
-    }
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {};

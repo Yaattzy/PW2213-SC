@@ -33,6 +33,7 @@ export default {
             return value || "Sin datos";
           },
         },
+        {key: 'actions', label: 'Acciones'}
       ],
     };
   },
