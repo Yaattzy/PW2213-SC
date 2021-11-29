@@ -8,7 +8,7 @@
         </div>
       </template>
       <template #cell(actions)="data">
-       slot
+        <slot name="actions" :item="data"></slot>
       </template>
     </b-table>
   </div>

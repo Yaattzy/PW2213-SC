@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     personas: [],
+    persona: {},
     loading: false
   },
   mutations: {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     SET_LOADING(state, xd) {
       state.loading = xd;
+    },
+    SET_PERSONA(state, persona) {
+      state.persona = persona;
     }
   },
   actions: {
@@ -30,6 +34,14 @@ export default new Vuex.Store({
     crearPersona({commit}, {params, onComplete, onError}){
       axios.post('http://localhost:3000/personas', params)
       .then(onComplete)
+      .catch(onError);
+    },
+    obtenerPersona({commit}, {id, onComplete, onError}) {
+      axios.get(`http://localhost:3000/personas/${id}`)
+      .then(response => {
+        commit('SET_PERSONA', response.data.data);
+        onComplete(response);
+      })
       .catch(onError);
     }
   },

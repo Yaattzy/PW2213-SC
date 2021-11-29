@@ -14,6 +14,11 @@ const routes = [
     path: '/agregar',
     name: 'Agregar',
     component: () => import('../views/Agregar.vue')
+  },
+  {
+    path: '/editar/:id',
+    name: 'Editar',
+    component: () => import('../views/Editar.vue')
   }
 ]
 
