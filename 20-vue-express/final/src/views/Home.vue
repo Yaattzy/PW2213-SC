@@ -54,9 +54,36 @@ export default {
     ...mapState(["personas", "loading"]),
   },
   methods: {
-    ...mapActions(["setPersonas"]),
+    ...mapActions(["setPersonas", "eliminarPersona"]),
     onEliminar(data) {
-      alert(data.item.id);
+      
+      this.$bvModal.msgBoxConfirm('Esta opción no se puede deshacer.', {
+          title: 'Eliminar persona',
+          size: 'sm',
+          buttonSize: 'sm',
+          okVariant: 'danger',
+          okTitle: 'Eliminar',
+          cancelTitle: 'Cancelar',
+          centered: true
+        })
+          .then(value => {
+            if(value) {
+              this.eliminarPersona({
+                id: data.item.id,
+                onComplete: (response) => {
+                  this.$notify({
+                    type: 'success',
+                    title: response.data.mensaje
+                  });
+                  setTimeout(() => this.setPersonas(), 1000);
+                }
+              })
+            }
+          })
+          .catch(err => {
+            // An error occurred
+          })
+
     },
     onEditar(data) {
       this.$router.push({

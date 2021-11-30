@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+import axios, { Axios } from 'axios'
 
 Vue.use(Vuex)
 
@@ -20,7 +20,7 @@ export default new Vuex.Store({
     SET_PERSONA(state, persona) {
       state.persona = persona;
     }
-  },
+  }, 
   actions: {
     setPersonas({commit}){
       commit('SET_LOADING', true);
@@ -42,6 +42,16 @@ export default new Vuex.Store({
         commit('SET_PERSONA', response.data.data);
         onComplete(response);
       })
+      .catch(onError);
+    },
+    editarPersona({commit}, {id, body, onComplete, onError}){
+      axios.put(`http://localhost:3000/personas/${id}`, body)
+      .then(onComplete)
+      .catch(onError);
+    },
+    eliminarPersona({commit}, {id, onComplete, onError}){
+      axios.delete(`http://localhost:3000/personas/${id}`)
+      .then(onComplete)
       .catch(onError);
     }
   },

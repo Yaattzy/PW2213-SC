@@ -70,10 +70,31 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["obtenerPersona"]),
+    ...mapActions(["obtenerPersona", "editarPersona"]),
     guardarPersona() {
       if (this.validacionNombre) {
         this.erroresValidacion = false;
+
+        this.editarPersona({
+          id: this.persona.id,
+          body: this.persona,
+          onComplete: (response) => {
+              this.$notify({
+                type: 'success',
+                title: response.data.mensaje
+              });
+              this.$router.push({
+                name: 'Home'
+              });
+          },
+          onError: (error) => {
+            this.$notify({
+              type: 'error',
+              title: error.response.data.mensaje
+            });
+          }
+        })
+
       } else {
         this.erroresValidacion = true;
       }
